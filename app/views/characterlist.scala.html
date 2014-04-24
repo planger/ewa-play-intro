@@ -1,0 +1,22 @@
+@(text: String, characters: List[Character])
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>@text</title>
+  </head>
+  <body>
+    <h1>Characters of @text</h1>
+    @charactersAsUnorderedList(characters)
+  </body>
+</html>
+
+@charactersAsUnorderedList(characters: List[Character]) = {
+  @if(!characters.isEmpty()) {
+    <ul>
+      @for(character <- characters) {
+        <li>@character</li>
+      }
+    </ul>
+  }
+}

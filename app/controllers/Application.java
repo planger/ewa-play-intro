@@ -1,8 +1,10 @@
 package controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import play.*;
 import play.mvc.*;
-
 import views.html.*;
 
 public class Application extends Controller {
@@ -22,6 +24,16 @@ public class Application extends Controller {
 		} else {
 			return badRequest("Provide a proper name!");
 		}
+	}
+
+	public static Result listCharacters(String text) {
+		List<Character> characters = new ArrayList<Character>();
+		for (char c : text.toLowerCase().toCharArray()) {
+			if (!characters.contains(c)) {
+				characters.add(c);
+			}
+		}
+		return ok(characterlist.render(text, characters));
 	}
 
 }
