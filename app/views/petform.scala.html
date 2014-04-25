@@ -1,0 +1,19 @@
+@(form: Form[Pet])
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New Pet</title>
+  </head>
+  <body>
+    <h1>New pet</h1>
+    @helper.form(action = routes.Pets.createPet) {
+      @helper.inputText(form("name"))
+      @helper.inputRadioGroup(
+              form("gender"),
+              options = Seq(("male"->"Male"),("female"->"Female"))
+              )
+      <button type="submit" name="action" value="new">Save</button>
+    }
+  </body>
+</html>

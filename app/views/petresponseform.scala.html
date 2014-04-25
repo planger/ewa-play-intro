@@ -1,0 +1,20 @@
+@(pets: Collection[Pet])
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New Pet Response</title>
+  </head>
+  <body>
+    <h1>New pet response</h1>
+    @helper.form(action = routes.Pets.createPetResponse) {
+      <select name="petId">
+      @for(pet <- pets) {
+        <option value="@pet.getId()">@pet.getName()</option>
+      }
+      </select>
+      <input type="text" id="petResponse" name="petResponse" />
+      <button type="submit" name="action" value="new">Respond</button>
+    }
+  </body>
+</html>

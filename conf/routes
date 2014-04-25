@@ -10,6 +10,10 @@ GET     /hello/:name                controllers.Application.sayHelloTo(name: Str
 GET     /characters                 controllers.Application.listCharacters(text: String)
 
 GET     /pets                       controllers.Pets.list()
+GET     /pets/response              controllers.Pets.newPetResponse()
+POST    /pets/response              controllers.Pets.createPetResponse()
+GET     /pets/new                   controllers.Pets.newPet()
+POST    /pets                       controllers.Pets.createPet()
 GET     /pets/:id                   controllers.Pets.show(id: Long)
 
 # Map static resources from the /public folder to the /assets URL path
