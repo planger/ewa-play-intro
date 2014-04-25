@@ -13,6 +13,7 @@ import play.data.DynamicForm;
 import play.data.Form;
 import play.db.jpa.JPA;
 import play.db.jpa.Transactional;
+import play.i18n.Messages;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -72,7 +73,7 @@ public class Pets extends Controller {
 		String petId = form.data().get("petId");
 		String petResponse = form.data().get("petResponse");
 		Pet pet = getPetById(Long.valueOf(petId));
-		return ok(pet.getName() + " says " + petResponse);
+		return ok(Messages.get("pet.response", pet.getName(), petResponse));
 	}
 	
 	public static Result newPet() {

@@ -11,9 +11,9 @@
       @helper.inputText(form("name"))
       @helper.inputRadioGroup(
               form("gender"),
-              options = Seq(("male"->"Male"),("female"->"Female"))
-              )
-      <button type="submit" name="action" value="new">Save</button>
+              options = Seq(("male"->"Male"),("female"->"Female")),
+              '_label -> Messages("pet.gender"))
+      <button type="submit" name="action" value="new">@Messages("pet.save")</button>
     }
   </body>
 </html>
