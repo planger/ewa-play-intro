@@ -8,6 +8,7 @@ GET     /anonymoushello             controllers.Application.sayHello()
 GET     /hello                      controllers.Application.sayHelloTo(name: String = "Stranger")
 GET     /hello/:name                controllers.Application.sayHelloTo(name: String)
 GET     /characters                 controllers.Application.listCharacters(text: String)
+GET     /longrunning                controllers.Application.longRunningAction()
 
 GET     /pets                       controllers.Pets.list()
 GET     /pets/response              controllers.Pets.newPetResponse()
